@@ -9,7 +9,7 @@
 4. declare current obj and prev obj
 5. use splitLines array dot map 
     1. if charAt(0) is '>' assign to previous what is in currentobj
-    1. reinitialize cuurentobj label to undefined and seq to ""
+    1. reinitialize currentobj label to undefined and seq to ""
     1. assign currentobj.label the current line (which starts with '>')
     1. push previousobj to fasta array of objects {label:XXXX, seq: XXXXXX}
     1. if charAt(0) is not '>' then

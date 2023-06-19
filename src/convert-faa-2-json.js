@@ -10,8 +10,8 @@ const DIRNAME = '../DATA/';
 let fileName = 'GCF_000001405.28_GRCh38.p2_protein.faa';
 let fullPath = DIRNAME + fileName;
 
-
-function log(m) {console.log(m)}
+function log(m) { }
+// function log(m) {console.log(m)}
 
 function init(fileName) {
     const readContentFile =  async fileName => {
@@ -32,7 +32,7 @@ function init(fileName) {
         
         let counterLgt = 0;
         let counterNoLgt = 0;
-        splitLines.map((line, i) => {
+        let my = splitLines.map((line, i) => {
             if (line.charAt(0) === '>'){
                 counterLgt++;
                 prevObj = { ...myObj }
@@ -41,6 +41,7 @@ function init(fileName) {
 
                 if (prevObj.label !== undefined){ // *** to fix first line when prevObj is undefined
                     fastaArray.push(prevObj);
+                    return prevObj;
                 }
             } else { // line.charAt(0) is not '>'
                 myObj.seq += line;
@@ -48,10 +49,16 @@ function init(fileName) {
                     log("****** last line looping");
                     log(myObj);
                     fastaArray.push(myObj);
+                    return myObj; // last object before the end of file
                 }
                 counterNoLgt++
             }
         })
+        console.log(`my.length ${my.length}`);
+        log(my);
+
+        let final = my.filter(item => item !== undefined);
+        console.log(final.length);
         log(counterLgt); log(counterNoLgt)
         writeFile(fullPath + 'label-seq.json', JSON.stringify(fastaArray), (error) => {
             if (error) console.log(error);
@@ -60,6 +67,10 @@ function init(fileName) {
         writeFile(fullPath + 'label-seq.fasta', item, error => {
             if (error) console.log(error)
             else console.log('success');
+        });
+        writeFile(fullPath + 'label-seq.map.json', JSON.stringify(final), error => {
+            if (error) console.log(error)
+            else console.log('map json success!')
         })
 
     })
@@ -74,7 +85,7 @@ init(fileName);
  * 4. declare current obj and prev obj
  * 5. use splitLines array dot map 
  * 5a. if charAt(0) is '>' assign to previous what is in currentobj
- * 5b reinitialize cuurentobj label to undefined and seq to ""
+ * 5b reinitialize currentobj label to undefined and seq to ""
  * 5c assign currentobj.label the current line (which starts with '>')
  * 5d push previousobj to fasta array of objects {label:XXXX, seq: XXXXXX}
  * 5e if charAt(0) is not '>' then
