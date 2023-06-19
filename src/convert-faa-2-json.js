@@ -57,7 +57,12 @@ function init(fileName) {
         console.log(`my.length ${my.length}`);
         log(my);
 
-        let final = my.filter(item => item !== undefined);
+        let final = my.filter(item => item !== undefined); // *** 
+                //  ****** each '>' return myObj{label: seq}; lines with no '>' added undefined
+                // ***** filter using undefined to get same data as in fastaArray
+                // ****  if using map no need to create an extra array, and then run a filter to get
+                //  final data with object {label: 'name', seq:'XXXXXXXXX'} 98121
+
         console.log(final.length);
         log(counterLgt); log(counterNoLgt)
         writeFile(fullPath + 'label-seq.json', JSON.stringify(fastaArray), (error) => {
