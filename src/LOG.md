@@ -7,7 +7,7 @@
 2. promise.then proccess content which is string
 3. split by newline
 4. declare current obj and prev obj
-5. use splitLines array dot map 
+5. use splitLines array dot map and create new array fasta array. But it can be used with the returned array from map and then filter using if object not undefined return object.
     1. if charAt(0) is '>' assign to previous what is in currentobj
     1. reinitialize currentobj label to undefined and seq to ""
     1. assign currentobj.label the current line (which starts with '>')
