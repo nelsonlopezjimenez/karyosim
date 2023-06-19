@@ -1,3 +1,25 @@
+# KARYOSIM
+
+## 6.18.2023
+
+### ALGORITHM
+1. Read file content
+2. promise.then proccess content which is string
+3. split by newline
+4. declare current obj and prev obj
+5. use splitLines array dot map 
+    1. if charAt(0) is '>' assign to previous what is in currentobj
+    1. reinitialize cuurentobj label to undefined and seq to ""
+    1. assign currentobj.label the current line (which starts with '>')
+    1. push previousobj to fasta array of objects {label:XXXX, seq: XXXXXX}
+    1. if charAt(0) is not '>' then
+    1. concatenate current line to current seq
+    1. continue until second to the last line (because there is one extra line added)
+    1. if second to last line: logout " last line looping", push currentobj
+1. write json obj and flat obj: json obj is in one line, flat obj is in 954907 lines
+ 
+
+
 ## Using Chartjs bubble: an array of objects with x, y, and r attributes.
 1. Hashes generated from ensemble homo sapiens all proteines GRCh38 p2 I believe
 1. Duplicates counted using seqHash as basis. Result in an object { 'label': number, 'label': number, etc}
