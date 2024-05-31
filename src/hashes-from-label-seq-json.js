@@ -8,6 +8,7 @@
  *  SAVE: './Homo_sapiens.GRCh38.pep.all.2hash.json
  */
 
+import 'dotenv/config';
 const { writeFile, read } = require('fs');
 const { readFile } = require('fs').promises;
 const crypto = require('crypto');
@@ -55,7 +56,7 @@ function init5(fileName){
     })
     writeFile(fullPath + '.hashed.json', JSON.stringify(newJsObj), (error) => {
       if (error) console.log(error);
-      else console.log('success sha1 json')
+      else console.log('success hashed json')
     })
     writeFile(fullPath + '.hash2label.flat', labelHash2labelFlat, error => {
       if (error) console.log(error + 'line80');
