@@ -37,8 +37,8 @@ function init5(fileName){
   // log(readContentFileNew);
   // readContentFileNew(fullPath).then(jsObj => console.log(m.length)) //
   readContentFile(fullPath).then(jsObj => {
-    let modifier = "NelsonDLopez";
-    let hashMethod = 'sha1';
+    let modifier = process.env.MODIFIER;
+    let hashMethod = process.env.HASH_METHOD;
     let labelSeqHashLenFlat = '';
     let labelHash2labelFlat = ''; 
 
@@ -73,7 +73,7 @@ function init5(fileName){
 
 /**
  * 6.19.2023
- * same algorithm but instead of new array used the returne array from map function
+ * same algorithm but instead of new array used the returned array from map function
  * readFile refactored to parse immediately after reading.
  * flat files created the same
  * pending to add other properties.
