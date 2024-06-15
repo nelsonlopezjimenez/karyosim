@@ -1,0 +1,92 @@
+https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/
+
+LAST_EDITED: 6.15.2024
+
+*_protein.faa.gz file
+       FASTA format sequences of the accessioned protein products annotated on
+       the genome assembly. The FASTA title is formatted as sequence 
+       accession.version plus description.
+
+
+countDup: array of {'seqHash': numberOfDuplicates}
+GCF_000001405.40_GRCh38.p14_protein.faa.gz.countDup.gz.38.p14
+89832 unique sequences
+
+labelMap: array of {'seqHash': '>NX_XXXXXX some name and some brackets'}
+GCF_000001405.40_GRCh38.p14_protein.faa.gz.labelmap.gz.38.p14
+136194 angle records
+
+labelMap.labels: array of {'seqHash' : ['>NX_XXXXXX', 'NX_XXXXXX', 'NX_XXXXXX', ...]}
+GCF_000001405.40_GRCh38.p14_protein.faa.gz.labelmap.labels.gz.38.p14
+89832 uniques seqHash
+
+labelseqhash: array of {'labelHash': 'seqHash'}
+GCF_000001405.40_GRCh38.p14_protein.faa.gz.labelseqhash.gz.38.p14
+136194 angle records
+
+GCF_000001405.40_GRCh38.p14_rna.fna.gz.labelseqhash.gz.38.p14
+
+GCF_000001405.40_GRCh38.p14_rna.fna.gz.countDup.gz.38.p14
+
+LEAME.txt
+
+NCBI RefSeq assembly
+GCF_000001405.40
+Submitted GenBank assembly
+GCA_000001405.29
+Taxon
+Homo sapiens (human)
+Synonym
+hg38
+Assembly type
+haploid with alt loci
+Submitter
+Genome Reference Consortium
+Date
+Feb 3, 2022
+
+
+Assembly statistics
+RefSeq	GenBank
+Genome size	3.1 Gb	3.1 Gb
+Total ungapped length	2.9 Gb	2.9 Gb
+Gaps between scaffolds	349	349
+Number of chromosomes	24	24
+Number of organelles	1	1
+Number of scaffolds	470	473
+Scaffold N50	67.8 Mb	67.8 Mb
+Scaffold L50	16	16
+Number of contigs	996	999
+Contig N50	57.9 Mb	57.9 Mb
+Contig L50	18	18
+GC percent	41	41
+Assembly level	Chromosome	Chromosome
+BioProject
+PRJNA31257
+The Human Genome Project, currently maintained by the Genome Reference Consortium (GRC)
+
+  *_rna.fna.gz file
+       FASTA format of accessioned RNA products annotated on the genome 
+       assembly; Provided for RefSeq assemblies as relevant (Note, RNA and mRNA 
+       products are not instantiated as a separate accessioned record in GenBank
+       but are provided for some RefSeq genomes, most notably the eukaryotes.)
+       The FASTA title is provided as sequence accession.version plus 
+       description.
+
+  *_rna_from_genomic.fna.gz
+       FASTA format of the nucleotide sequences corresponding to all RNA 
+       features annotated on the assembly, based on the genome sequence. See 
+       the "Description of files" section below for details of the file format.
+
+  *_translated_cds.faa.gz
+       FASTA sequences of individual CDS features annotated on the genomic 
+       records, conceptually translated into protein sequence. The sequence 
+       corresponds to the translation of the nucleotide sequence provided in the
+       *_cds_from_genomic.fna.gz file. 
+
+   annotation_hashes.txt
+       Tab-delimited text file reporting hash values for different aspects
+       of the annotation data. See the "Description of files" section below 
+       for details of the file format.
+   md5checksums.txt file
+       file checksums are provided for all data files in the directory
