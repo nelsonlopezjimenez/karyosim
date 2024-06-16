@@ -8,25 +8,25 @@ LAST_EDITED: 6.15.2024
        accession.version plus description.
 
 
-countDup: array of {'seqHash': numberOfDuplicates}
-GCF_000001405.40_GRCh38.p14_protein.faa.gz.countDup.gz.38.p14
+countDup: array of [{'seqHash': numberOfDuplicates}, {}, {}, {},...] **3.4 MB**
+GCF_000001405.40_GRCh38.p14_protein.faa.gz.countDup.gz.38.p14 `3.4 MB`
 89832 unique sequences
 
-labelMap: array of {'seqHash': '>NX_XXXXXX some name and some brackets'}
-GCF_000001405.40_GRCh38.p14_protein.faa.gz.labelmap.gz.38.p14
+labelMap: array of [{'seqHash': '>NX_XXXXXX some name and some brackets'}, {}, {}, ...]
+GCF_000001405.40_GRCh38.p14_protein.faa.gz.labelmap.gz.38.p14   `7.0 MB`
 136194 angle records
 
 labelMap.labels: array of {'seqHash' : ['>NX_XXXXXX', 'NX_XXXXXX', 'NX_XXXXXX', ...]}
-GCF_000001405.40_GRCh38.p14_protein.faa.gz.labelmap.labels.gz.38.p14
+GCF_000001405.40_GRCh38.p14_protein.faa.gz.labelmap.labels.gz.38.p14 `4.9 MB`
 89832 uniques seqHash
 
-labelseqhash: array of {'labelHash': 'seqHash'}
-GCF_000001405.40_GRCh38.p14_protein.faa.gz.labelseqhash.gz.38.p14
+labelseqhash: array of [{'labelHash': '', 'seqHash': ''}, {}, {}, {}, ....]
+GCF_000001405.40_GRCh38.p14_protein.faa.gz.labelseqhash.gz.38.p14  `9.6 MB`
 136194 angle records
 
-GCF_000001405.40_GRCh38.p14_rna.fna.gz.labelseqhash.gz.38.p14
+GCF_000001405.40_GRCh38.p14_rna.fna.gz.labelseqhash.gz.38.p14 `14 MB`
 
-GCF_000001405.40_GRCh38.p14_rna.fna.gz.countDup.gz.38.p14
+GCF_000001405.40_GRCh38.p14_rna.fna.gz.countDup.gz.38.p14 `6.8 MB`
 
 LEAME.txt
 
