@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
     "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
-<title>1d</title>
+<title>1e</title>
 <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -486,7 +486,7 @@ function update_all() {
 </head>
 <body>
 
-<span id="heading" style="display:inline-block;margin-bottom: .5em;">1d</span>
+<span id="heading" style="display:inline-block;margin-bottom: .5em;">1e</span>
 
 <span style="display:inline-block;float:right;margin-top: .8em;">
 <input id="RORW" type="button" value="RW>RO" onclick="toggle_rw(event,this);">
@@ -519,88 +519,187 @@ p { background-color:#bbb; font-size:18px; }
 <ol><li>You can configure global style properties in the first cell</li>
 <li>You can add in-line properties if needed</li>
 <li>Practice with as much HTML tags as possible: add images, videos, sound, etc</li></ol></div></span></div><p style="margin: 0.75em;"></p><div id="b5">[5]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b5_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;JavaScript Fundamentals&lt;/h1&gt;
-&lt;h1&gt;slice(arr, start, end)&lt;/h1&gt;</textarea><div><h1>JavaScript Fundamentals</h1>
-<h1>slice(arr, start, end)</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b6">[6]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b6_in" class="hidden" rows="1" cols="110" style="height: auto;">function slice(arr, start, end){
-   let result = [];
-   if (end === undefined) { end = arr.length;}
-   if (end &gt; arr.length+1) { end = arr.length;}
-   for (let i = start; i &lt; end; i++){
-      result.push(arr[i]);
-   }
-   return result;
-}
-slice([1, 2, 3, 4, 5], 0, 2); // [1, 2]
-//slice([1, 2, 3, 4, 5], 2, 4); // [3, 4]
-slice([1, 2, 3, 4, 5], 2); // [3, 4, 5]
-//slice([1, 2, 3, 4, 5], 2, 10); // [3, 4, 5]</textarea><div><textarea id="b6_val" class="box2" rows="1" cols="110" style="height: 16px;">3,4,5</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b7">[7]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b7_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;Built-in Array.slice(start, end)&lt;/h1&gt;
-&lt;!- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice --&gt;</textarea><div><h1>Built-in Array.slice(start, end)</h1>
-<!--- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice ----></div></span></div><p style="margin: 0.75em;"></p><div id="b8">[8]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b8_in" class="hidden" rows="1" cols="110" style="height: auto;">const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
-function display(){
-   return animals.slice(-2)
+&lt;h1&gt;Arrow Functions&lt;/h1&gt;</textarea><div><h1>JavaScript Fundamentals</h1>
+<h1>Arrow Functions</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b6">[6]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b6_in" class="hidden" rows="1" cols="110" style="height: auto;">// JS ES5 function
+function getGreeting5(){
+   return `Welcome to JavaScript`;
 }
 
-console.log(animals.slice(2));
-// Expected output: Array ["camel", "duck", "elephant"]
-
-console.log(animals.slice(2, 4));
-// Expected output: Array ["camel", "duck"]
-
-console.log(animals.slice(1, 5));
-// Expected output: Array ["bison", "camel", "duck", "elephant"]
-
-console.log(animals.slice(-2));
-// Expected output: Array ["duck", "elephant"]
-
-console.log(animals.slice(2, -1));
-// Expected output: Array ["camel", "duck"]
-
-console.log(animals.slice());
-// Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
-display()</textarea><div><textarea id="null_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b9">[9]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b9_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;max(arr)&lt;/h1&gt;</textarea><div><h1>max(arr)</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b10">[10]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b10_in" class="hidden" rows="1" cols="110" style="height: auto;">function max(arr){
-   let max = -Infinity;
-   for (let i = 0; i &lt; arr.length; i++){
-      if (arr[i] &gt; max) { max = arr[i]}
-   }
-   return max;
+// JS ES6 arrow function with body
+const getGreeting6 = () =&gt; {
+   return `Welcome to JavaScript`;
 }
-max([-50,2,4,6])</textarea><div><textarea id="b10_val" class="box2" rows="1" cols="110" style="height: 16px;">6</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b11">[11]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b11_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;Math.max(arr)&lt;/h1&gt;
-&lt;!- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max --&gt;</textarea><div><h1>Math.max(arr)</h1>
-<!--- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/max ----></div></span></div><p style="margin: 0.75em;"></p><div id="b12">[12]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b12_in" class="hidden" rows="1" cols="110" style="height: auto;">Math.max(10, 20); // 20
-Math.max(-10, -20); // -10
-Math.max(-10, 20); // 20</textarea><div><textarea id="b12_val" class="box2" rows="1" cols="110" style="height: 16px;">20</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b13">[13]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b13_in" class="hidden" rows="1" cols="110" style="height: auto;">// Math.max(...[])
+
+// JS ES6 arrow function without body and implicit return
+const getGreetingA = () =&gt; `Welcome to JavaScript`;
+
+getGreetingA()</textarea><div><textarea id="b6_val" class="box2" rows="1" cols="110" style="height: 16px;">Welcome to JavaScript</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b7">[7]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b7_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;Functions as Components in React&lt;/h1&gt;</textarea><div><h1>Functions as Components in React</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b8">[8]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b8_in" class="hidden" rows="1" cols="110" style="height: auto;">// JavaScript ES5 function
+function Greeting(props) {
+  return &lt;h1&gt;{props.greeting}&lt;/h1&gt;;
+}
+
+// JavaScript ES6 arrow function
+const Greeting = (props) =&gt; {
+  return &lt;h1&gt;{props.greeting}&lt;/h1&gt;;
+}
+
+// JavaScript ES6 arrow function
+// without body and implicit return
+const Greeting = (props) =&gt;
+  &lt;h1&gt;{props.greeting}&lt;/h1&gt;;</textarea><div><textarea id="null_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b9">[9]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b9_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;map, reduce and filter in React&lt;/h1&gt;</textarea><div><h1>map, reduce and filter in React</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b10">[10]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b10_in" class="hidden" rows="1" cols="110" style="height: auto;">// JSX define a variable in the render() method
+import React from 'react';
+
+const App = () =&gt; {
+  const greeting = 'Welcome to React';
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{greeting}&lt;/h1&gt; // you only use curly braces!!!!
+    &lt;/div&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="b10_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b11">[11]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b11_in" class="hidden" rows="1" cols="110" style="height: auto;">// from rendering a string to a complex object: 
+import React from 'react';
+
+const App = () =&gt; {
+  var user = { name: 'Robin' };
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{user.name}&lt;/h1&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;</textarea><div><textarea id="b8_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b12">[12]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b12_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;How to render a list in React&lt;/h1&gt;</textarea><div><h1>How to render a list in React</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b13">[13]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b13_in" class="hidden" rows="1" cols="110" style="height: auto;">// Math.max(...[])
 const arr = [1, 2, 3];
 function usingSpreadSyntax(arr){
    return Math.max(...arr);
 }
 usingSpreadSyntax(arr)
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax</textarea><div><textarea id="b12_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b14">[14]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b14_in" class="hidden" rows="1" cols="110" style="height: auto;">// Using reduce
-const arr = [1, 2, 3];
-function usingReduce(){
-   const max = arr.reduce((a, b) =&gt; Math.max(a, b), -Infinity);
-   return max
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax</textarea><div><textarea id="b12_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b14">[14]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b14_in" class="hidden" rows="1" cols="110" style="height: auto;">import React from 'react';
+
+const App = () =&gt; {
+  var users = [
+    { name: 'Robin' },
+    { name: 'Markus' },
+  ];
+
+  return (
+    &lt;ul&gt;
+      {users.map(function (user) {
+        return &lt;li&gt;{user.name}&lt;/li&gt;;
+      })}
+    &lt;/ul&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="null_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b15">[15]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b15_in" class="hidden" rows="1" cols="110" style="height: auto;">// using more concise arrow function with implicit return
+import React from 'react';
+
+const App = () =&gt; {
+  var users = [
+    { name: 'Robin' },
+    { name: 'Markus' },
+  ];
+
+  return (
+    &lt;ul&gt;
+      {users.map(user =&gt; &lt;li&gt;{user.name}&lt;/li&gt;)}
+    &lt;/ul&gt;
+  );
 }
-usingReduce(arr)</textarea><div><textarea id="null_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b15">[15]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b15_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;min(arr)&lt;/h1&gt;</textarea><div><h1>min(arr)</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b16">[16]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b16_in" class="hidden" rows="1" cols="110" style="height: auto;">function min(arr){
-   let min = +Infinity;
-   for (let i = 0; i &lt; arr.length; i++){
-      if (arr[i] &lt; min) { min = arr[i]}
-   }
-   return min;
-}
-min([-50,2,4,6])</textarea><div><textarea id="b16_val" class="box2" rows="1" cols="110" style="height: 16px;">-50</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b17">[17]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b17_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;Math.min()&lt;/h1&gt;
-&lt;!- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min --&gt;</textarea><div><h1>Math.min()</h1>
-<!--- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/min ----></div></span></div><p style="margin: 0.75em;"></p><div id="b18">[18]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b18_in" class="hidden" rows="1" cols="110" style="height: auto;">// Math.min(...[])
-const arr = [1, 2, -3];
-function usingSpreadSyntax(arr){
-   return Math.min(...arr);
-}
-usingSpreadSyntax(arr)
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax</textarea><div><textarea id="b18_val" class="box2" rows="1" cols="110" style="height: 16px;">-3</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b19">[19]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b19_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div></div></span></div><p style="margin: 0.75em;"></p><div id="b20">[20]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b20_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b20_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b21">[21]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b21_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b16_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b22">[22]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b22_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b22_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b23">[23]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b23_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b16_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b24">[24]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b24_in" class="hidden" rows="1" cols="110" style="height: auto;">function stringIndexOf(word, single){
-   for (let i = 0; i &lt; word.length; i++){
-      if (word[i] === single){ return i}
-   }
-   return -1;
-}
-stringIndexOf('awesome', 'z')</textarea><div><textarea id="b24_val" class="box2" rows="1" cols="110" style="height: 16px;">-1</textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b25">[25]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b25_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b16_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b26">[26]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b26_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b26_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b27">[27]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b27_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div></div></span></div><p style="margin: 0.75em;"></p></div>
+
+export default App;</textarea><div><textarea id="b8_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b16">[16]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b16_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;Using map method&lt;/h1&gt;
+&lt;p&gt;It makes sense to map over an array and return the rendered output for each item.&lt;/p&gt;
+&lt;p&gt;The same can be applied for custom tailored cases using filter() or reduce() methods</textarea><div><h1>Using map method</h1>
+<p>It makes sense to map over an array and return the rendered output for each item.</p>
+<p>The same can be applied for custom tailored cases using filter() or reduce() methods</p></div></span></div><p style="margin: 0.75em;"></p><div id="b17">[17]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b17_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;filter()&lt;/h1&gt;</textarea><div><h1>filter()</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b18">[18]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b18_in" class="hidden" rows="1" cols="110" style="height: auto;">import React from 'react';
+
+const App = () =&gt; {
+  var users = [
+    { name: 'Robin', isDeveloper: true },
+    { name: 'Markus', isDeveloper: false },
+  ];
+
+  return (
+    &lt;ul&gt;
+      {users
+        .filter(user =&gt; user.isDeveloper)
+        .map(user =&gt; &lt;li&gt;{user.name}&lt;/li&gt;)
+      }
+    &lt;/ul&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="b18_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b19">[19]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class=""><input type="button" value="txt" onclick="show_block(event,this);" class=""><input type="button" value="clr" onclick="clr_block(event,this);" class=""><input type="button" value="-" onclick="vis_block(event,this);"><br><textarea id="b19_in" class="box0" rows="1" cols="110" style="height: 16px;">&lt;h1&gt;Ternary Operator&lt;/h1&gt;</textarea><div><h1>Ternary Operator</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b20">[20]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b20_in" class="hidden" rows="1" cols="110" style="height: auto;">import React from 'react';
+
+const App = () =&gt; {
+  const users = [
+    { name: 'Robin' },
+    { name: 'Markus' },
+  ];
+
+  const showUsers = false;
+
+  if (!showUsers) {
+    return null;
+  }
+
+  return (
+    &lt;ul&gt;
+      {users.map(user =&gt; &lt;li&gt;{user.name}&lt;/li&gt;)}
+    &lt;/ul&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="b20_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b21">[21]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b21_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h2&gt;If you want to use an if-else statement within the returned JSX, use ternary operator:&lt;/h2&gt;</textarea><div><h2>If you want to use an if-else statement within the returned JSX, use ternary operator:</h2></div></span></div><p style="margin: 0.75em;"></p><div id="b22">[22]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b22_in" class="hidden" rows="1" cols="110" style="height: auto;">import React from 'react';
+
+const App = () =&gt; {
+  const users = [
+    { name: 'Robin' },
+    { name: 'Markus' },
+  ];
+
+  const showUsers = false;
+
+  return (
+    &lt;div&gt;
+      {showUsers ? (
+        &lt;ul&gt;
+          {users.map(user =&gt; (
+            &lt;li&gt;{user.name}&lt;/li&gt;
+          ))}
+        &lt;/ul&gt;
+      ) : null}
+    &lt;/div&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="b22_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b23">[23]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b23_in" class="hidden" rows="1" cols="110" style="height: auto;">// or use the &amp;&amp; operator
+import React from 'react';
+
+const App = () =&gt; {
+  const users = [
+    { name: 'Robin' },
+    { name: 'Markus' },
+  ];
+
+  const showUsers = false;
+
+  return (
+    &lt;div&gt;
+      {showUsers &amp;&amp; (
+        &lt;ul&gt;
+          {users.map(user =&gt; (
+            &lt;li&gt;{user.name}&lt;/li&gt;
+          ))}
+        &lt;/ul&gt;
+      )}
+    &lt;/div&gt;
+  );
+};
+
+export default App;</textarea><div><textarea id="b16_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b24">[24]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b24_in" class="hidden" rows="1" cols="110" style="height: auto;">&lt;h1&gt;Import/Export syntax in React&lt;/h1&gt;</textarea><div><h1>Import/Export syntax in React</h1></div></span></div><p style="margin: 0.75em;"></p><div id="b25">[25]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b25_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b16_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b26">[26]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b26_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div><textarea id="b26_val" class="box2" rows="1" cols="110" style="height: 16px;"></textarea></div></span></div><p style="margin: 0.75em;"></p><div id="b27">[27]:&nbsp;<span class="box1"><input type="button" value="go" onclick="button_flash(go_block,event,this);" class="hidden"><input type="button" value="txt" onclick="show_block(event,this);" class="hidden"><input type="button" value="clr" onclick="clr_block(event,this);" class="hidden"><input type="button" value="+" onclick="vis_block(event,this);"><br><textarea id="b27_in" class="hidden" rows="1" cols="110" style="height: auto;"></textarea><div></div></span></div><p style="margin: 0.75em;"></p></div>
 
 <input type="button" value="go last" onclick="button_flash(golast_block,event,this);" class="">
 
