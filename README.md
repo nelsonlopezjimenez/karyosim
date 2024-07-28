@@ -1,3 +1,49 @@
+# MCC-TRU
+## 7.28.2024
+1. f2c7dd0 (HEAD -> mcc-tru, origin/mcc-tru) Added W3S/MDN Web Security, cors, cybersecurity
+1. 1d27d03 HTTP methods, URL def, Q3-Lab1, async/await
+1. 09ee4d7 Q3 Lab1 by Brooks modified from docx to md
+## 7.25.2024
+1. 998a662 added max and twoHighest custom functions
+## 7.23.2024
+1. cff8646 Wieruch: JS fundamntls for react modified
+## 7.17.2024
+1. 04ef8ce Added to 1d slice, max, min, and my40 with syntax references
+1. efab8b4 Added notebook 1b, 1c with easiest exercises
+1. 7e2359d Index.astro: each quarter separate ul list
+1. 17d2de6 MCC-TRU new branch created for MCC only
+1. 6b6dfeb (origin/main, origin/HEAD, main) RADME done and pending todos
+1. 66f9e38 Dot labelmap and labelseqhash 38.p14 1-25 done
+1. 62620f7 Algorithm added AWK from features file
+1. 4022b88 Fixed processChrWithIdSymbolSanityCheck to get .primer and .fna.gene
+1. c0c48bf Added chr22.fna.gz.labelmap.gz.38.p14 and chr22..labelseqhash.gz.38.p14
+1. ec58446 Generated two lists: idSymbMap and idSymbSeqHash
+1. a777105 Algorithm in chr22.fna.gz.ipynb file written
+1. 307b847 Found the right assembly at 000001405GCF-38.p14
+1. dd97948 USP18, FRG1FP complementary, and DUXAP8 genes tested
+1. f5d98c9 added full gene USP18, 11274
+1. efd5cf3 Added python to process chromoseme22 NC_000022.11
+1. 051a9bf created thousdand-genomes ipynt and asm-format.md
+1. 699017c added thousand-genomes.ipynb
+1. ac2d51e Added bubble-chart notebook
+1. 650fb8e added test suite first last elements
+1. 59f753d deleted data from dot ignore
+1. c24ea73 jupyter process-rna 38.p14 done
+1. 728f29b process-protein cleaned. Test with p12
+1. 4cd1096 merge with the previous commit
+1. 074f7c3 process-protein {'XXXXX':['>xxx', '>df asdf df ', '>np', ....]
+1. 8503a05 process-protein sorted a list of dics based on duplicate number
+1. 317641b process-protein read, hashed, duplicates, before sorting
+1. 3ad711e Cleaned extra info number 2
+1. 029018c Cleaned of extra data
+1. 61a1a39 process-protein ipynb with full data processing flow
+1. 20c905b Hashing, first/last protein, +/- SEED label/seq output
+1. 051c17a Start sha256().encode().hexdigest()
+1. 427ec60 Fasta2one faa.gz to dictionary {'label':'xxx', 'seq':'xxxx'}
+1. ead1a25 fasta2one def: from fasta multilines to oneline record
+1. 99a54a3 added astro tailwindcss verdaccio app
+1. dc302c3 Parcel cube chartjs moved into its own folder
+
 # Astro Starter Kit: Basics
 
 ```sh
