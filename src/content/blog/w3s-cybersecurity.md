@@ -1,7 +1,7 @@
 ---
 title: Cybersecurity Web Applications
 date: 7/27/2024
-myData: W3S https://www.w3schools.com/cybersecurity/cybersecurity_web_applications.php and https://www.w3schools.com/cybersecurity/cybersecurity_networking.php
+myData: W3S https://www.w3schools.com/cybersecurity/cybersecurity_web_applications.php and https://www.w3schools.com/cybersecurity/cybersecurity_networking.php; Node.js The Comprehensive Guide. Sebastian Springer. Rheinwerk. REST server page 295
 ---
 
 # Cyber Security Web Applications
@@ -80,32 +80,32 @@ Set-Cookie: <cookie value>
 ```
 
 The response header and content is what determines what we will see in our browser. The HTTP response headers are explained as following:
+|Header	|Explanation
+|-----------|---------------------------------------
+|HTTP/1.1 200 OK	|The HTTP Response code. Explained in detail in the HTTP Response Codes section
+|-----------|---------------------------------------
+|Content-Type: text/html	|Specifies the type of content being returned, e.g. HTML, JSON or XML
+|-----------|---------------------------------------
+|Set-Cookie:	|Any special values the client should remember and return in the next request
+|-----------|---------------------------------------
 
-| Header                  | Explanation                                                                    |
-| ----------------------- | ------------------------------------------------------------------------------ |
-| HTTP/1.1 200 OK         | The HTTP Response code. Explained in detail in the HTTP Response Codes section |
-| ------------            | ---------------------------------------------                                  |
-| Content-Type: text/html | Specifies the type of content being returned, e.g. HTML, JSON or XML           |
-| ------------            | ---------------------------------------------                                  |
-| Set-Cookie:             | Any special values the client should remember and return in the next request   |
-| ------------            | ---------------------------------------------                                  |
 
 ## HTTP Verbs
 
 When accessing a web application the client is instructed on how to send data to the web application. There are many verbs which can be accepted by the application.
 
-| Verb    | Used for                                                                                                                                                                 |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| GET     | Typically used to retrieve values via Query Parameters                                                                                                                   |
-| ------- | --------------------------------------------------                                                                                                                       |
-| POST    | Used to send data to a script via values in the body of the Request sent to the webserver. Typically it involves creating, uploading or sending large quantities of data |
-| ------- | --------------------------------------------------                                                                                                                       |
-| PUT     | Often use to upload or write data to the webserver                                                                                                                       |
-| ------- | --------------------------------------------------                                                                                                                       |
-| DELETE  | Indicate a resource which should be deleted                                                                                                                              |
-| ------- | --------------------------------------------------                                                                                                                       |
-| PATCH   | Can be used to update a resource with a new value                                                                                                                        |
-| ------- | --------------------------------------------------                                                                                                                       |
+|Verb	|Used for
+|-------|---------------------------------------
+|GET	|Typically used to retrieve values via Query Parameters
+|-------|---------------------------------------
+|POST	|Used to send data to a script via values in the body of the Request sent to the webserver. Typically it involves creating, uploading or sending large quantities of data
+|-------|---------------------------------------
+|PUT	|Often use to upload or write data to the webserver
+|-------|---------------------------------------
+|DELETE	|Indicate a resource which should be deleted
+|-------|---------------------------------------
+|PATCH	|Can be used to update a resource with a new value
+|-------|----------------------------------------
 
 These are used as the web application requires. **Restful (REST)** web services are especially good at using the full array of HTTP Verbs to define what should be done on the backend.
 
@@ -113,26 +113,40 @@ These are used as the web application requires. **Restful (REST)** web services 
 
 The application running on the webserver can respond with different codes based on what occurred on the server side. Listed are common response codes the webserver will issue to the client which security professionals should know about:
 
-| Code  | Explanation                                                                                            |
-| ----- | ------------------------------------------------------------------------------------------------------ |
-| 200   | Application returned normally                                                                          |
-| ----- | --------------------------------------------------                                                     |
-| 301   | Server asks client to permanently remember a redirect to a new location where the client should access |
-| ----- | --------------------------------------------------                                                     |
-| 302   | Redirect temporarily. Client doesn't need to save this reply                                           |
-| ----- | --------------------------------------------------                                                     |
-| 400   | The client made an invalid request                                                                     |
-| ----- | --------------------------------------------------                                                     |
-| 403   | The client is not allowed to access this resource. Authorization is required                           |
-| ----- | --------------------------------------------------                                                     |
-| 404   | The client tried to access a resource which does not exist                                             |
-| ----- | --------------------------------------------------                                                     |
-| 500   | The server errored in trying to fulfill the request                                                    |
-| ----- | --------------------------------------------------                                                     |
+|Code	  |Explanation
+| -------- |--------------------------------------
+|200	  |Application returned normally
+| --------- |---------------------------------------
+|301	  |Server asks client to permanently remember a redirect to a new location where the client should access
+| --------- |--------------------------------------
+|302    |Redirect temporarily. Client doesn't need to save this reply
+| --------- |-------------------------------------
+|400	|The client made an invalid request
+| --------- |---------------------------------------
+|403	|The client is not allowed to access this resource. Authorization is required
+| -------- |----------------------------------------
+|404	|The client tried to access a resource which does not exist
+| -------- |----------------------------------------
+|500	|The server errored in trying to fulfill the request
+| -------- |----------------------------------------
 
 ## REST
 
 Rest services, sometimes called RESTful services, employ the full force of HTTP Verbs and HTTP Response Codes to facilitate the use of the web application. RESTful services often uses parts of the URL as a query parameter to determine what happens on the web application. REST is typically used by API's ("Application Programming Interfaces").
+
+Representational State Transfer (REST) represents an architectural paradigm used in web application. It utilizes the URL to map resources and describes how they are accessed through the various HTTP methods. 
+
+The main features of a REST interface are as follows:
+
+- ### Statelesness
+    Each request to the service should contain all the required information, so the server doesn't need to keep any state information
+- ### Resources
+    1. All movie records can be accessed via the URL http://localhost:8080/movie. The result of an HTTP request is returned to the client as a JSON (JavaScript Object Notation) structure. The data is consumed by the frontend single-page application based on React (Quarter 4). In the absence of a frontend, you will learn how to access the backend application with Postman graphical user interface and the cURL command-line tool. You can use both tools to test the interfaces you will be writing in the course.
+    1. Each resource is accessible via a unique URI. For example, you can retrieve the data record of a movie with ID 1 via the URL http://localhost:8080/movie/1.
+    1. To add a new record to the database the URL should be: http://localhost:8080/movie (same a to list all movies)
+    1. To modify a movie with ID 1 the URL should be: http://localhost:8080/movie/1
+    1. Finally, to delete a record with ID 2 the URL should be http://localhost:8080/movie/2
+
 
 REST URLs will invoke functionality based on the different elements of the URL.
 
@@ -140,14 +154,14 @@ An example REST URL: http://example.com/users/search/w3schools
 
 This URL will invoke functionality as part of the URL instead of Query Parameters. We can decipher the URL as:
 
-| Parameter   | Comment                                       |
-| ----------- | --------------------------------------------- |
-| users       | Accessing the users part of the functionality |
-| ----------- | -------------------------------               |
-| search      | Accessing the search feature                  |
-| ----------- | -------------------------------               |
-| w3schools   | The user to search for                        |
-| ----------- | -------------------------------               |
+|Parameter	|Comment
+|--------------|------------------------------------------------------|
+|users	|Accessing the users part of the functionality
+|--------------|------------------------------------------------------|
+|search	|Accessing the search feature
+|--------------|------------------------------------------------------|
+|w3schools	|The user to search for
+|--------------|--------------------------------------------------------|
 
 ## Sessions & State
 
