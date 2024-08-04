@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Template</title>
+    <style>
+        .articles-mcqs { width: 80%;}
+        .react-mcq-questions { display: flex; width:80%; justify-items: center;}
+        .make-blue {background-color: aliceblue;}
+    </style>
 </head>
 
 <body>
@@ -938,5 +943,46 @@
 
         </section>
     </div>
+    <script>
+        let questionSection = document.querySelectorAll('.ibpage-problems__item');
+        let myRadio  = document.querySelectorAll('input');
+        let myImg = document.querySelectorAll('img');
+
+        for (let i = 0; i < myImg.length; i++){
+            myImg[i].setAttribute('hidden', true);
+
+        }
+        console.log(questionSection.length)
+        console.log(myRadio.length)
+        console.log(myImg.length)
+
+        // console.dir(questionSection[0].childNod
+        for (let i = 0 ; i < myRadio.length; i++){
+            // console.log(questionSection[parseInt(i/4)].childNodes[3].childNodes[7].childNodes[5].setAttribute('hidden', true))
+            myRadio[i].addEventListener('click', (event) => {
+                console.log(`you hit radio ${i} question ${(i%4)} of ${parseInt((i/4))}`);
+                // console.log(`you hit radio ${i} question ${(i%4)+1} of ${parseInt((i/4))+1}`);
+
+                for (let j = 0; j < 8; j++) {
+                    if (j%2 === 1){
+                        let tempJ = j;
+                        if (questionSection[parseInt(i/4)].childNodes[3].childNodes[j].dataset['correct'] === 'true'){
+                            let my = questionSection[parseInt(i/4)].childNodes[3].childNodes[j].childNodes[3]
+                            my.style.backgroundColor= "rgb(125, 210, 195)";
+                            // console.log(questionSection[parseInt(i/4)].childNodes[3].childNodes[j].childNodes)
+                            if (i%4 === j){
+                                myImg[i*2].setAttribute('hidden', false)
+                            }
+                        }
+                        else {
+                            let my = questionSection[parseInt(i/4)].childNodes[3].childNodes[j].childNodes[3]
+                            my.style.backgroundColor= "rgb(125, 10, 195)";
+                        }
+                    }
+                }
+
+            })
+        }
+    </script>
 </body>
 </html>
