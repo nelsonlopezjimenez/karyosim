@@ -1,4 +1,4 @@
-import data from './questionArr.js'
+import data from './questionArr-0f-arr.js'
 // convert-plaintext-to-mcq.js node.exe convert-plaintext-to-mcq.js > test.test.html
 function makeStyle() {
     return `<style>
@@ -11,17 +11,19 @@ function makeStyle() {
         justify-content: space-between;
     }
 
-    .form-check[data-correct='true'] {
+   /* .form-check[data-correct='true'] {
         background-color: green;
     }
 
     .form-check--v2[data-correct='false'] {
         background-color: rgb(176, 27, 27);
     }
-
+    */
     .form-check__icon {
         display: inline;
     }
+    make-green { background-color: 'green'}
+    make-border-red {border: 4px solid red }
 </style>`
 }
 
@@ -52,12 +54,12 @@ function makeBodySectionHeader(questionNumber, title){
     </div>`
 }
 
-function makeBodyFormCheck(questionNumber, unique, content, j){
+function makeBodyFormCheck(questionNumber, unique, content, j, one2four){
     return `<div class="ibpage-problems__options">
     <div class="form-check" data-correct="${j++ === 0 ? true : false}"
         data-problem-index=${questionNumber}>
         <input class="form-check__input " type="radio" name="${unique+questionNumber}"
-            id="${unique + content}" value="">
+            id="${unique + content}" value="${one2four}">
         <label class="form-check__label" for="${unique + content}">
             ${content}
         </label>
@@ -87,7 +89,11 @@ function makeLocalScript(){
         for (let i = 0 ; i < myRadio.length; i++){
             // console.log(questionSection[parseInt(i/4)].childNodes[3].childNodes[7].childNodes[5].setAttribute('hidden', true))
             myRadio[i].addEventListener('click', (event) => {
-            
+                console.log(questionSection[i/4].id)
+                console.dir(questionSection[i/4].childNodes)
+                if (event.target.value === 1){
+                   questionSection[i/4].childNodes[2].style.backgroundColor-'green';
+                }
 
             })
         }
@@ -98,15 +104,26 @@ function makeAfterFormCheck(){
 }
 function repeat4times(questionNumber){
     let result = '';
-    for (let i = 0; i < 4; i++){
-        result += makeBodyFormCheck(questionNumber, 'cxg', data[questionNumber].questions[i], (i === 0 ? 0:1));
+    for (let i = 1; i < 5; i++){
+        result += makeBodyFormCheck(questionNumber, 'cxg', data[questionNumber][i], (i === 1 ? 0:1), i);
     }
+    result += `</section>`
+    return result;
+}
+function repeatTotalQuestions(){
+    let result = '';
+    result += makeHeader('Midterm', '8.4.2024')
+    for (let i = 0; i < data.length; i++){
+        result += makeBodySectionHeader(i, data[i][0] );
+        result += repeat4times(i);
+    }
+    result += makeAfterFormCheck();
     return result;
 }
 
-function main10(){
+function mainA(){
     console.log(makeHeader('Midterm', '8.4.2024')) 
-    console.log(makeBodySectionHeader(0, data[0].title ))
+    console.log(makeBodySectionHeader(0, data[0][0] ))
     console.log(makeBodyFormCheck(1, 'cxg', data[0].questions[0], 0));
     console.log(makeBodyFormCheck(1, 'cxg', data[0].questions[1], 1));
     console.log(makeBodyFormCheck(1, 'cxg', data[0].questions[2], 1));
@@ -115,8 +132,11 @@ function main10(){
 }
 function main(){
     console.log(makeHeader('Midterm', '8.4.2024')) 
-    console.log(makeBodySectionHeader(0, data[0].title ))
+    console.log(makeBodySectionHeader(0, data[0][0] ))
     console.log(repeat4times(0))
+    console.log(makeBodySectionHeader(1, data[0][0] ))
+    console.log(repeat4times(1))
     console.log(makeAfterFormCheck())
 }
-main()
+// console.log(data)
+console.log(repeatTotalQuestions());

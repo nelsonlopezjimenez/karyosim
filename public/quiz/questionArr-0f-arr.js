@@ -13,13 +13,13 @@ let otherData = [
         "Connectivity",
         "Database",
         "Design platform",
-    ]
+    ],
     [
         "The Keys given to a list of elements in React should be ______.",
         "Unique among the siblings only",
         "Not necessarily unique",
         "Unique in the DOM (Document Object Model)",
-        "None of the above",
+        "None of the above"
     ],
     [
         "The number of elements that can be returned by a valid React component is ______.",
@@ -59,7 +59,7 @@ let otherData = [
     [
         "What is the declarative approach for rendering a dynamic list of components depending on array values?",
         "Using Array.map() method",
-        "Using <Each/> component",
+        "Using &lt;Each/> component",
         "Using reduce array method",
         "Using for or while loop",
     ],
@@ -92,3 +92,4 @@ let otherData = [
         "All of the above",
     ],   
 ]
+export default otherData;
