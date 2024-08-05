@@ -28,6 +28,7 @@
     .form-check__icon {
         display: inline;
     }
+    .make-inv {display: none}
 </style>
     <title>Midterm</title>
 </head>
@@ -781,19 +782,20 @@
         <div>
             <p>Which of the following comes under the advantages of React?.</p>
         </div>
-    </div><div class="ibpage-problems__options">
-    <div class="form-check" data-correct="true"
-        data-problem-index=12>
-        <input class="form-check__input " type="radio" name="cxg12"
-            id="cxgIntegration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only a view library" value="1">
-        <label class="form-check__label" for="cxgIntegration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only a view library">
-            Integration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only a view library
-        </label>
-        <img class="form-check__icon form-check__icon--success"
-            src="green-check-99d545.svg" />
-        <img class="form-check__icon form-check__icon--error"
-            src=" cross-616d53c.svg" />
     </div>
+    <div class="ibpage-problems__options">
+        <div class="form-check" data-correct="true"
+            data-problem-index=12>
+            <input class="form-check__input " type="radio" name="cxg12"
+                id="cxgIntegration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only a view library" value="1">
+            <label class="form-check__label" for="cxgIntegration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only a view library">
+                Integration with other frameworks (like BackboneJS, Angular, etc.) becomes easier because it is only a view library
+            </label>
+            <img class="form-check__icon form-check__icon--success"
+                src="green-check-99d545.svg" />
+            <img class="form-check__icon form-check__icon--error"
+                src=" cross-616d53c.svg" />
+        </div>
 </div>
 <div class="ibpage-problems__options">
     <div class="form-check" data-correct="false"
@@ -844,29 +846,108 @@
         let questionSection = document.querySelectorAll('.ibpage-problems__item');
         let myRadio  = document.querySelectorAll('input');
         let myImg = document.querySelectorAll('img');
+        let mySection = document.querySelectorAll('section');
 
+        function workingSection(){
+            function children(){
+                console.log(mySection.length);
+                console.log('=============== children: header and 4 options')
+                console.dir(mySection[0].children)
+                console.log('=============== childNodes')
+                console.dir(mySection[0].childNodes)
+                console.log('=============== childElementCount')
+                console.dir(mySection[0].childElementCount)
+                console.log('=============== firstElementChild')
+                console.dir(mySection[0].firstElementChild)
+                console.log('=============== lastElementChild')
+                console.dir(mySection[0].lastElementChild)
+                console.log('=============== parentElement')
+                console.dir(mySection[0].parentElement)
+            }
+            function childreFirstElement(){
+                console.dir(mySection[0].children[0])
+                console.log('=============== getAttributeNames')
+                console.dir(mySection[0].children[0].getAttributeNames())
+                console.log('=============== getAttributeNames')
+                console.dir(mySection[0].children[0].getAttribute('class') )
+                console.dir(mySection[0].children[1].getAttribute('class') )
+                console.dir(mySection[0].children[2].getAttribute('class') )
+                console.dir('mySection[0].children[0].children');
+                console.dir(mySection[0].children[0].children); //span and div
+                console.dir(mySection[0].children[1].children); //div.form-check
+                console.dir(mySection[0].children[2].children); //div.form-check
+                console.dir('mySection[0].children[0].children[0]'); //span and div
+                console.dir('mySection[0].children[1].children[0]'); //div.form-check
+                console.dir(mySection[0].children[0].children[0]); //span and div
+                console.dir(mySection[0].children[1].children[0]); //div.form-check
+                console.dir(mySection[0].children[2].children[0]); //div.form-check
+                console.dir(mySection[0].children[3].children[0]); //div.form-check
+                console.dir(mySection[0].children[3].children[0]); //div.form-check
+                
+                console.log('section[0].children[0].children[0].children'); // [0] and [1]
+                console.dir(mySection[0].children[0].children[0].children); // [0,4]
+                console.dir(mySection[0].children[1].children[0].children); 
+
+                let childrenZero = (mySection[0].children[0].children[0].children); 
+                let childrenFirst = (mySection[0].children[1].children[0].children); 
+                let childrenSecond = (mySection[0].children[2].children[0].children); 
+                let childrenThird= (mySection[0].children[3].children[0].children); 
+                let childrenFourth = (mySection[0].children[4].children[0].children); 
+
+                let childrenFirstGetAttrNames = (mySection[0].children[1].children[0].children[0].getAttributeNames()); 
+                let childrenSecondGetAttrNames = (mySection[0].children[2].children[0].children[1].getAttributeNames()); 
+                let childrenThirdGetAttrNames = (mySection[0].children[3].children[0].children[2].getAttributeNames()); 
+                let childrenFourthGetAttrNames = (mySection[0].children[4].children[0].children[3].getAttributeNames()); 
+                console.log('childrenFirst')
+                console.log(childrenFirst)
+                childrenFirst[1].style.backgroundColor='green'
+                childrenFirst[2].style.backgroundColor='green'
+                childrenFirst[3].classList.add('make-inv')
+                // childrenFirst[3].setAttribute('hidden', true)
+                childrenSecond[2].classList.add('make-inv')
+                childrenThird[2].classList.add('make-inv')
+                childrenFourth[2].classList.add('make-inv')
+                // childrenThird[3].classList.add('make-inv')
+                // childrenFourth[3].classList.add('make-inv')
+
+                console.log(childrenFirstGetAttrNames)
+                console.log(childrenSecondGetAttrNames)
+                console.log(childrenThirdGetAttrNames)
+                console.log(childrenFourthGetAttrNames)
+                childrenFirstGetAttrNames
+            }
+            // children();
+            childreFirstElement()
+        }
+
+        console.log(questionSection.length)
+        console.log(myRadio.length)
+        console.log(myImg.length)
+        workingSection();
+
+        // console.dir(questionSection[0].childNod
+        function previousWork(){
+            
         for (let i = 0; i < myImg.length; i++){
             myImg[i].setAttribute('hidden', true);
 
         }
-        console.log(questionSection.length)
-        console.log(myRadio.length)
-        console.log(myImg.length)
-
-        // console.dir(questionSection[0].childNod
-        for (let i = 0 ; i < myRadio.length; i++){
-            // console.log(questionSection[parseInt(i/4)].childNodes[3].childNodes[7].childNodes[5].setAttribute('hidden', true))
-            myRadio[i].addEventListener('click', (event) => {
-                console.log(questionSection[i/4].id)
-                console.dir(questionSection[i/4].childNodes)
-                console.dir(questionSection[i/4].children)
-                console.dir(questionSection[i/4].children[1])
-                console.dir(questionSection[i/4].children[1].tagName)
-                console.dir(questionSection[i/4].children[1].firstElementChild)
-                questionSection[i/4].children[1].firstElementChild.style.backgroundColor='green'
-                questionSection[i/4].children[2].firstElementChild.style.backgroundColor='yellow'
-                console.dir(questionSection[i/4].childElementCount)
-            })
+            for (let i = 0 ; i < myRadio.length; i++){
+                // console.log(questionSection[parseInt(i/4)].childNodes[3].childNodes[7].childNodes[5].setAttribute('hidden', true))
+                myRadio[i].addEventListener('click', (event) => {
+                    console.log(questionSection[i/4].id)
+                    console.dir(questionSection[i/4].childNodes)
+                    console.dir(questionSection[i/4].children.length)
+                    console.dir(questionSection[i/4].children)
+                    console.dir(questionSection[i/4].children[1])
+                    console.dir(questionSection[i/4].children[1].tagName)
+                    console.dir(questionSection[i/4].children[1].id)
+                    console.dir(questionSection[i/4].children[1].firstElementChild)
+                    questionSection[i/4].children[1].firstElementChild.style.backgroundColor='green'
+                    questionSection[i/4].children[2].firstElementChild.style.backgroundColor='yellow'
+                    console.dir(questionSection[i/4].childElementCount)
+                })
+            }
         }
     </script>
 </html>
