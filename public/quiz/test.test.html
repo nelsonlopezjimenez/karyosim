@@ -29,6 +29,8 @@
         display: inline;
     }
     .make-inv {display: none}
+    .make-green { background-color: green; color:white;}
+    .make-red { background-color: red; color: white;}
 </style>
     <title>Midterm</title>
 </head>
@@ -776,7 +778,8 @@
             src=" cross-616d53c.svg" />
     </div>
 </div>
-</section><section class="ibpage-problems__item" id="Which of the following comes under the advantages of React?">
+</section>
+<section class="ibpage-problems__item" id="Which of the following comes under the advantages of React?">
     <div class="ibpage-problems__header">
         <span class="m-r-5 h3">12</span>
         <div>
@@ -848,6 +851,51 @@
         let myImg = document.querySelectorAll('img');
         let mySection = document.querySelectorAll('section');
 
+        let order = 12;
+        function selectSection(order){
+            let mySelection = mySection[order].children; //it is HTML element
+            // console.dir(mySelection);
+            return mySelection;
+        }
+        function selectHeader(mySelection){
+            let header = mySelection[0]
+            let myChildren = header.children
+            let mySpan = myChildren[0].innerHTML;
+            let title = myChildren[1].innerHTML
+            console.log(`span: ${mySpan} === title: ${title}`)
+
+        }
+        function selectFirsQuestion(mySelection){
+            let isCorrect = mySelection[1].children[0].getAttribute('data-correct'); //true or false
+            let type = mySelection[1].children[0].children[0].type;
+            let value = mySelection[1].children[0].children[0].value;
+            let name = mySelection[1].children[0].children[0].name;
+            let title = mySelection[1].children[0].children[1].innerHTML
+            let firstImg = mySelection[1].children[0].children[2]
+            let secondImg = mySelection[1].children[0].children[3]
+            console.dir(firstImg);
+            mySelection[1].children[0].classList.add('make-green')
+            // mySelection[1].children[0].children[3].classList.add('make-inv')
+            secondImg.classList.add('make-inv')
+            // mySelection[1].style.backgroundColor='green'
+        }
+        function selectQuestion(mySelection, number){
+            let isCorrect = mySelection[number].children[0].getAttribute('data-correct'); //true or false
+            let type = mySelection[number].children[0].children[0].type;
+            let value = mySelection[number].children[0].children[0].value;
+            let name = mySelection[number].children[0].children[0].name;
+            let title = mySelection[number].children[0].children[1].innerHTML
+            let firstImg = mySelection[number].children[0].children[2]
+            let secondImg = mySelection[number].children[0].children[3]
+            console.dir(firstImg);
+            mySelection[number].children[0].classList.add('make-red')
+            // mySelection[1].children[0].children[3].classList.add('make-inv')
+            firstImg.classList.add('make-inv')
+            // mySelection[1].style.backgroundColor='green'
+        }
+        function selectSecondQuestion(order){
+
+        }
         function workingSection(){
             function children(){
                 console.log(mySection.length);
@@ -923,7 +971,13 @@
         console.log(questionSection.length)
         console.log(myRadio.length)
         console.log(myImg.length)
-        workingSection();
+        // workingSection();
+        // selectSection(12);
+        // selectHeader(selectSection(12))
+        selectFirsQuestion(selectSection(0))
+        selectQuestion(selectSection(0), 2)
+        selectQuestion(selectSection(0), 3)
+        selectQuestion(selectSection(0), 4)
 
         // console.dir(questionSection[0].childNod
         function previousWork(){
