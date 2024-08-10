@@ -45,6 +45,16 @@ const myFunc3 = new Promise((resolve, reject) => {
 //   });
 
 function main() {
+  console.log(myFunc1());
+  console.log(myFunc2('='));
+  //   result += myFunc3(); // myFunc3 is not a function
+  console.log(myFunc3.then((d) => d)); // FIRST LINE Promise {<pending>}
+  myFunc3.then((d) => console.log(d));
+  console.log(myFunc2('-'));
+  console.log(myFunc2('#'));
+  console.log(myFunc4());
+}
+function mainSecond() {
   let result = '';
   result += myFunc1();
   result += myFunc2('=');
@@ -57,5 +67,3 @@ function main() {
   console.log(result);
 }
 main();
-
-// build += '\n';
