@@ -2,6 +2,12 @@
 
 ## 9.2.2024 (m.d.y)
 
+1. Telomere-to-telomere project at https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/
+1. Pending to consider whether it is important going forward. 
+1. The coordinate system looks different.
+1. Count stream of chars from a file: using vi, colon 'goto position number + position/80 + numof chars in '>dsfdffirst line"
+1. Is the start of the gene always the first exon? apparently yes
+1. Advantages of hashes faa vs fna from dDNA?. Pending
 1. Sanity check
 ```sh
 $ for i in *.primer; do echo '============ HEAD === ' $i '============'; zless $i | head; echo '------------------ HEAD ----'; echo '--------------- TAIL ---------'; zless $i | tail; echo '--------------- TAIL '; done > heads-tails
@@ -68,8 +74,72 @@ GTGACCACAGTCTGCAGAGGCCAGAGAGAGCAGGAAAGGAAATGGAAAGGAACCTCACCTTCATGCTTGG...ATGAACC
              ||||||||||||||||||||||||||||||||||||||||                                                                 |||||||||||||||||||||||||//
              GCAGAGGCCAGAGAGAGCAGGAAAGGAAATGGAAAGGAAC.................................................................AGATACATTTATTGCTGGGGATTGCAAGGAGTGTGTTTAC
 ```
-1. .
+1. Test-chr22
+```
+>('3162', 'HMOX1', '35381096', '35394207')	13112
+CTCTCGAGCGTCCTCAGCGCAGCCGCCGCCCGCGGAGCCA....AAATAATAAACAACATTGTCTGATAGTAGCTTGAAGTAGT
+>NC_000022.11:35381096-35394207 Homo sapiens chromosome 22, GRCh38.p14 Primary Assembly
+1        1         2         3         4         5         6         7   4         5         6         7
+AACGCCTGCCTCCTCTCGAGCGTCCTCAGCGCAGCCGCCGCCCGCGGAGCCAGCACGAACGAGCCCAGCA...GTGGCCTTGGTCTAACTTTTGTGTGAAATAA..TAAACAACATTGTCTGATAGTA
+            ||||||||||||||||||||||||||||||||||||||||                                                      ||||||||||||||||||||||           
+            CTCTCGAGCGTCCTCAGCGCAGCCGCCGCCCGCGGAGCCA................................................AAATAATAAACAACATTGTCTGATAGTAGCTTGAAGTAGT
 
+
+```
+1. I found the reason of the mismatch: number of chars first line + number of start/80 (meaning newline chars). Vi allows to jump to start or end but it needs added the number of char in first line plus number of newline chars.
+```
+1        1         2         3         4         5         6         7
+>NC_000010.11 Homo sapiens chromosome 10, GRCh38.p14 Primary Assembly 71
+>NC_000011.10 Homo sapiens chromosome 11, GRCh38.p14 Primary Assembly 71
+>NC_000012.12 Homo sapiens chromosome 12, GRCh38.p14 Primary Assembly 71
+>NC_000013.11 Homo sapiens chromosome 13, GRCh38.p14 Primary Assembly 71
+>NC_000015.10 Homo sapiens chromosome 15, GRCh38.p14 Primary Assembly 
+>NC_000016.10 Homo sapiens chromosome 16, GRCh38.p14 Primary Assembly
+>NC_000017.11 Homo sapiens chromosome 17, GRCh38.p14 Primary Assembly
+>NC_000018.10 Homo sapiens chromosome 18, GRCh38.p14 Primary Assembly
+>NC_000019.10 Homo sapiens chromosome 19, GRCh38.p14 Primary Assembly
+>NC_000022.11 Homo sapiens chromosome 22, GRCh38.p14 Primary Assembly 71
+>NC_000020.11 Homo sapiens chromosome 20, GRCh38.p14 Primary Assembly 71
+>NC_000014.9 Homo sapiens chromosome 14, GRCh38.p14 Primary Assembly 70
+>NC_000001.11 Homo sapiens chromosome 1, GRCh38.p14 Primary Assembly 70
+>NC_000002.12 Homo sapiens chromosome 2, GRCh38.p14 Primary Assembly
+>NC_000021.9 Homo sapiens chromosome 21, GRCh38.p14 Primary Assembly
+>NC_000003.12 Homo sapiens chromosome 3, GRCh38.p14 Primary Assembly
+>NC_000004.12 Homo sapiens chromosome 4, GRCh38.p14 Primary Assembly
+>NC_000005.10 Homo sapiens chromosome 5, GRCh38.p14 Primary Assembly
+>NC_000006.12 Homo sapiens chromosome 6, GRCh38.p14 Primary Assembly
+>NC_000007.14 Homo sapiens chromosome 7, GRCh38.p14 Primary Assembly
+>NC_000008.11 Homo sapiens chromosome 8, GRCh38.p14 Primary Assembly
+>NC_000009.12 Homo sapiens chromosome 9, GRCh38.p14 Primary Assembly
+>NC_000023.11 Homo sapiens chromosome X, GRCh38.p14 Primary Assembly
+>NC_000024.10 Homo sapiens chromosome Y, GRCh38.p14 Primary Assembly
+```
+1. Find in python notebook, cell with processChrWithIdSymbolSanityCheck in def buildSeqHash(tuple, mySeed): instead of hardcoded 80 pass the real length of the header line + newLine char. in cell 189 of chrNN.fna.gz.ipynb file
+1. ### Pending from chrNN.fna.gz.ipynb cell 193
+1. 6.23.2024
+1. .primer is two lines: first line with > and tuple with id, symbol, start, end
+1. .primer second line with gene 5'primer 3'end primer 
+1. direction based in reference sequence
+1. Checked 
+```
+ 19 >('5902', 'RANBP1', '20116104', '20127355')     11252
+     20 ACTGTCCATAGAGGGGTCACCACGTCGGCCACTCGTGTTA....CATCAAAAATAGTGAATAAAAAACACATTTGGAACCTGGG
+     >NC_000022.11:20116104-20127355 Homo sapiens chromosome 22, GRCh38.p14 Primary Assembly
+ACTGTCCATAGAGGGGTCACCACGTCGGCCACTCGTGTTACTGGTGGCTCACTCTCACCCTCCTGTCGCC...CTTATTTATAGTCATCAAAAATAGTGAATAAAAAACACATTTGGAACCTGGG
+||||||||||||||||||||||||||||||||||||||||                                             ||||||||||||||||||||||||||||||||||||||||
+ACTGTCCATAGAGGGGTCACCACGTCGGCCACTCGTGTTA.............................................CATCAAAAATAGTGAATAAAAAACACATTTGGAACCTGGG
+  
+```
+And it looks good
+1. NCBI at 5902
+```
+Location: 22q11.21
+Exon count: 9
+Annotation release	Status	Assembly	Chr	Location
+RS_2024_08	current	GRCh38.p14 (GCF_000001405.40)	22	NC_000022.11 (20116104..20127355)
+RS_2024_08	current	T2T-CHM13v2.0 (GCF_009914755.1)	22	NC_060946.1 (20495154..20506390)
+105.20220307	previous assembly	GRCh37.p13 (GCF_000001405.25)	22	NC_000022.10 (20103627..20114878)
+```
 
 ## 8.31.2024 (m.d.y)
 
