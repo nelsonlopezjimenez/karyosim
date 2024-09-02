@@ -22,8 +22,9 @@ GCTCCTGCTCTGGGGGAAAAGAATCCAGGCCCCTCCACGC....ATTGGCAGCAATTTGAAGGGCGGCCAAAACCTAGAT
 1. OUTPUT:
 ```
 >hg38_hgnc range=chr10:8619806-8620808 5'pad=0 3'pad=0 strand=+ repeatMasking=none 
-GGTCGTGGCCTTGCTCCTGCTCTGGGGGAAAAGAATCCAGGCCCCTCCAC...ATCCAACAGAATCATACCACATTTCCATTGGCAGCAATTTGAAGGGCGGCCAA
-            ||||||||||||||||||||||||||||||||||||||                             |||||||||||||||||||||||||||
+1        1         2         3         4         5
+GGTCGTGGCCTTGCTCCTGCTCTGGGGGAAAAGAATCCAGGCCCCTCCAC...ATCCAACAGAATCATACCACATTTCCATTGGCAGCAATTTGAAGGGCGGC..CAA
+            ||||||||||||||||||||||||||||||||||||||                             ||||||||||||||||||||||||///
             GCTCCTGCTCTGGGGGAAAAGAATCCAGGCCCCTCCACGC....                 ......ATTGGCAGCAATTTGAAGGGCGGCCAAAACCTAGATCAGG
 TEST-chr10
 ```
@@ -39,6 +40,7 @@ RS_2024_08	current	T2T-CHM13v2.0 (GCF_009914755.1)	10	NC_060934.1 (8621279..8622
 1. OUTPUT: https://www.ncbi.nlm.nih.gov/nuccore/NC_000010.11?report=fasta&from=8619806&to=8620809
 ```
 >NC_000010.11:8619806-8620809 Homo sapiens chromosome 10, GRCh38.p14 Primary Assembly
+1        1         2         3         4         5         6         7
 GGTCGTGGCCTTGCTCCTGCTCTGGGGGAAAAGAATCCAGGCCCCTCCACGCGAGTGTGGGCACGGGGGA...GCAGCAATTTGAAGGGCGGCCAAA
             ||||||||||||||||||||||||||||||||||||||||                     ||||||||||||||||||||||||
             GCTCCTGCTCTGGGGGAAAAGAATCCAGGCCCCTCCACGC.................ATTGGCAGCAATTTGAAGGGCGGCCAAAACCTAGATCAGG
@@ -49,9 +51,19 @@ GGTCGTGGCCTTGCTCCTGCTCTGGGGGAAAAGAATCCAGGCCCCTCCACGCGAGTGTGGGCACGGGGGA...GCAGCAA
 >('90102', 'PHLDB2', '111732496', '111976517')	244022
 GCAGAGGCCAGAGAGAGCAGGAAAGGAAATGGAAAGGAAC....AGATACATTTATTGCTGGGGATTGCAAGGAGTGTGTTTAC
 ```
+1. at NCBI
+```
+Location: 3q13.2
+Exon count: 21
+Annotation release	Status	Assembly	Chr	Location
+RS_2024_08	current	GRCh38.p14 (GCF_000001405.40)	3	NC_000003.12 (111732496..111976517)
+RS_2024_08	current	T2T-CHM13v2.0 (GCF_009914755.1)	3	NC_060927.1 (114453343..114697610)
+105.20220307	previous assembly	GRCh37.p13 (GCF_000001405.25)	3	NC_000003.11 (111451343..111695364)
+```
 1. NCBI
 ```
 >NC_000003.12:111732496-111976517 Homo sapiens chromosome 3, GRCh38.p14 Primary Assembly
+1        1         2         3         4         5         6         7   1        1         2         3         4         5         6         7
 GTGACCACAGTCTGCAGAGGCCAGAGAGAGCAGGAAAGGAAATGGAAAGGAACCTCACCTTCATGCTTGG...ATGAACCCTGAAAAACTCTGACATCATATTGTTGTCTGTTTACACAGATACATTTATTGCTGGGGATTGC..AA
              ||||||||||||||||||||||||||||||||||||||||                                                                 |||||||||||||||||||||||||//
              GCAGAGGCCAGAGAGAGCAGGAAAGGAAATGGAAAGGAAC.................................................................AGATACATTTATTGCTGGGGATTGCAAGGAGTGTGTTTAC
