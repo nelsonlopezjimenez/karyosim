@@ -8,6 +8,7 @@
 1. Count stream of chars from a file: using vi, colon 'goto position number + position/80 + numof chars in '>dsfdffirst line"
 1. Is the start of the gene always the first exon? apparently yes
 1. Advantages of hashes faa vs fna from dDNA?. Pending
+1. Rerun the program with the correct gene coordinates (+- 11-12 chars: numofchar in first line)
 1. Sanity check
 ```sh
 $ for i in *.primer; do echo '============ HEAD === ' $i '============'; zless $i | head; echo '------------------ HEAD ----'; echo '--------------- TAIL ---------'; zless $i | tail; echo '--------------- TAIL '; done > heads-tails
