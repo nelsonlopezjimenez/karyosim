@@ -1,5 +1,68 @@
 # Procedure overview
 
+## 9.6.2024 (m.d.y)
+
+### Samtools install
+1. tried in windows python env, it did not work
+1. Switched to wsl ubuntu
+1. Install miniconda, search was suggesting mamba
+1. install conda, export the path, created samtools-conda-wsl-create environment
+1. conda config --add channels bioconda and conda-forge
+1. conda activate samtools-conda....
+1. conda install -c bioconda samtools
+1. run 
+```
+(samtools-conda-wsl-create) creeper@creepypandatrex:~/test01$ samtools fasta /mnt/c/Users/creeperpandatrex/Documents/1000genomes/HG00405.final.cram > HG00405.fa
+```
+1. After two hours it generated a 123 GBytes file !!!!!
+1. The reference assembly is 3 GB only
+1. Fasta seems to be extracting short reads only.
+
+### from biostars 367,960
+```
+The answer to this question is a simple two-step workflow:
+
+Call variants
+Include the variants into the reference sequence
+Do the variant calling step with your favorite program/workflow, e.g. with bcftools:
+
+    $ bcftools mpileup -Ou -f ref.fa input.bam | bcftools call -Ou -mv | bcftools norm -f ref.fa -Oz -o output.vcf.gz
+In the end, one needs a valid, sorted vcf file which is compressed with bgzip and indexed with tabix.
+
+I also recommend to normalize your vcf file (In the above command this is done by bcftools norm).
+
+If your vcf isn't already compressed you can do this with:
+
+    $ bgzip -c output.vcf > output.vcf.gz
+And indexing is done by:
+
+    $ tabix output.vcf.gz
+Now we are ready to create our consensus sequence. The tool of choice is bcftools consensus.
+
+If one like to create a complete new reference genome, based on the called variants, this is done by:
+
+    $ bcftools consensus -f ref.fa output.vcf.gz > out.fa
+If you are interested in only a given region:
+
+    $ samtools faidx ref.fa 8:11870-11890 | bcftools consensus output.vcf.gz -o out.fa
+You can also create consensus sequences for multiple regions, if you provide a bed file to samtools faidx:
+
+    $ samtools faidx -r regions.bed ref.fa  | bcftools consensus output.vcf.gz -o out.fa
+Have fun 
+```
+1. https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/000/001/405/GCF_000001405.40_GRCh38.p14/  2024
+1. and
+1. https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/  2015 ????
+
+## 9.5.2024 
+
+1. How to get individual chromosome sequence in fasta format from vcf.gz and its vcf.gz.tbi file of 1000 genome project?
+1. https://www.biostars.org/p/172109/
+1. How to make consensus sequence from aligned reads ? https://www.biostars.org/p/9465132/
+1. https://www.biostars.org/p/367960/ : explains the steps to get consensus using bcftools
+1. create consensus sequence from bam file https://www.biostars.org/p/419927/
+1. VCF - Variant Call Format see https://davetang.github.io/learning_vcf_file/
+
 ## 9.2.2024 (m.d.y)
 
 1. Telomere-to-telomere project at https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_009914755.1/
