@@ -1,12 +1,34 @@
 # Procedure overview
 
+## 9.7.2024 (m.d.y)
+1. Python env: 
+```(samtools-conda-wsl-create) creeper@creepypandatrex:~/test01$ samtools consensus -a --show-ins no /mnt/c/Users/creeperpandatrex/Documents/1000genomes/HG00405.final.cram -o HG00405.v3.fa
+(samtools-conda-wsl-create) creeper@creepypandatrex:~/test01$
+```
+1. Pending to test --show-ins yes
+1. wc HG00405.v3.fa:
+```
+(base) creeper@creepypandatrex:~/test01$ wc HG00405.v3.fa
+  45934179   45934179 3261099308 HG00405.v3.fa
+(base) creeper@creepypandatrex:~/test01$
+```
+1. grep '>' HG00405.v3.fa | wc -l  = 2805
+1. 3,261,099,308 chars
+1. samtools view -H
+```sh
+samtools view -H in.cram
+```
+1. Preliminar result of generating the consensus good
+1. However, coordinate mismatch of about 50,000 nucleotides
+1. gene 57185, NIPAL3, start: 24,413,524; end: 24,472,983; length 59460 nucl
+
 ## 9.6.2024 (m.d.y)
 
 ### Samtools install
 1. tried in windows python env, it did not work
 1. Switched to wsl ubuntu
-1. Install miniconda, search was suggesting mamba
-1. install conda, export the path, created samtools-conda-wsl-create environment
+1. Install miniconda3, search was suggesting mamba
+1. install miniconda3, export the path, created samtools-conda-wsl-create environment
 1. conda config --add channels bioconda and conda-forge
 1. conda activate samtools-conda....
 1. conda install -c bioconda samtools
