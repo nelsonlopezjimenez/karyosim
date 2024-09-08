@@ -1,5 +1,25 @@
 # Procedure overview
 
+## 9.8.2024
+
+1. 38.p14 full assembly n = 100
+1. individual compressed chromosomes n = 80
+1. default n in samtools consensus = 70
+1. samtools some options:
+```
+(samtools-conda-wsl-create) creeper@creepypandatrex:~/test01$ cat command
+samtools consensus -a --show-ins no --line-len 100 /mnt/c/Users/creeperpandatrex/Documents/1000genomes/HG0040X.final.cram -o HG0040X.v3.fa
+samtools consensus -a --show-ins no --line-len 100 -r chr1 /mnt/c/Users/creeperpandatrex/Documents/1000genomes/HG00408.final.cram -o HG00408.chr1.v3.fa
+samtools consensus -a --show-ins no --line-len 100 -r chr22:41469117-41528974 HG00405.final.cram -o HG00405.chr22.50-ACO2.fa
+(samtools-conda-wsl-create) creeper@creepypandatrex:~/test01$
+```
+1. tested -r region; --ambig; --line-len; whole chromosome, or part of a chromosome
+1. Regarding coordinates: divide the start by N, add 1 because of header, the fraction by 100 is the percent of bases for the first nucleotide in the start position. 
+1. In the reference genome it worked. In the extracted 405 the diff is different for 2 loci out of 3 by 1500 and 7000 nucleotide, hence, unreliable. 
+1. Extracted genes '5902'-RANBP1 and '50'-ACO2 from 403, 404, 405 cram files.
+1. First with N, then with option --ambig
+1. Quite many R, W, S, K found.
+1. Pending the count on the selected loci, then think about what to do going forward: Option a: using samtools to extract sequences based on the ref sequence. To many genes/loci to run the command. OPTION B: run consensus, check each loci by coordinates, doble check by primers, even though there are quite many NNNNNNN runs, as well as Ns in the target sequences, maybe confirm the char position to run the hash on the sequence with IUPAC codes, and/or, hash the number of consensus depending on the IUPAC code, remember that at each loci there at least two variant on each nucleotide position. If het/het expect the segregation, if homo/het, expect the segregation, if homo/homo, then only one possible variation in the child. 
 ## 9.7.2024 (m.d.y)
 
 1. 405 child of 405(father) and 403(mother)
