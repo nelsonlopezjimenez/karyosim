@@ -1,6 +1,12 @@
 # Procedure overview
 
 ## 9.7.2024 (m.d.y)
+
+1. 405 child of 405(father) and 403(mother)
+1. Father ERR3241665 and mother ERR3241666
+1. ERR3988761 - HG00405.final.cram
+1. ERR3988762 - HG00408.final.cram
+1. ERR3988763 - 418
 1. Python env: 
 ```(samtools-conda-wsl-create) creeper@creepypandatrex:~/test01$ samtools consensus -a --show-ins no /mnt/c/Users/creeperpandatrex/Documents/1000genomes/HG00405.final.cram -o HG00405.v3.fa
 (samtools-conda-wsl-create) creeper@creepypandatrex:~/test01$
