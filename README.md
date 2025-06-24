@@ -1,5 +1,18 @@
 # LOG
 
+## 6.24.2025 mdy
+1. At oliver-user at gen1 dash beecat created key pair
+```
+ssh-keygen -t ed25519 -C "oliver-user@gen1-beecat"
+```
+1. added config file
+```
+Host github.com
+   User nlj
+   IdentityFile ~/.ssh/file.priv
+```
+1. test
+
 ## 8.31.2024
 
 1. edit main branch
