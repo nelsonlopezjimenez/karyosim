@@ -1,5 +1,12 @@
 # LOG
 
+## 6.25.2025
+1. Decrypted amazon priv-key to ssh.
+1. Created aws  user-iam-identity_accessKeys
+1. Reviewed public/images with 403,404,405 IUPAC grep R codes in nucleotide seq, as well as the PROCEDURE_OVERVIEW file. 
+1. Get notebook to take notes and process info on a dayly basis.'
+1. Find a way to run jupyter notebooks on tunneled localhost from aws or home.
+
 ## 6.24.2025 mdy
 1. At oliver-user at gen1 dash beecat created key pair
 ```
